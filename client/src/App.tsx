@@ -268,7 +268,7 @@ const Register = () => {
     e.preventDefault();
     setStatus(null);
     try {
-      const res = await fetch('/api/circles', {
+      const res = await fetch('https://your-backend-url.com/api/circles', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
@@ -421,7 +421,7 @@ function App() {
   const [circleCount, setCircleCount] = React.useState(0);
 
   React.useEffect(() => {
-    fetch('/api/circles/count')
+    fetch('https://your-backend-url.com/api/circles/count')
       .then(res => res.json())
       .then(data => setCircleCount(data.count || 0))
       .catch(() => setCircleCount(0));

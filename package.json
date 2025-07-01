@@ -1,6 +1,25 @@
 {
+  "name": "math-circle-network",
+  "version": "1.0.0",
+  "description": "National Math Circle Network - A modern website for connecting math circles nationwide",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "build": "cd client && npm install && npm run build",
+    "vercel-build": "cd client && npm install && npm run build"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "mongoose": "^7.0.0",
+    "dotenv": "^16.0.3"
+  },
   "devDependencies": {
     "@types/react": "^19.1.8",
     "@types/react-router-dom": "^5.3.3"
-  }
+  },
+  "keywords": ["math", "education", "circles", "network", "react", "nodejs"],
+  "author": "Your Name",
+  "license": "MIT"
 }
