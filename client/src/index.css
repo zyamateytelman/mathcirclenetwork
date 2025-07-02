@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #111827;
+  color: #f9fafb;
+}
+
 /* Custom animations for DJI-style effects */
 @keyframes fade-in {
   from {
@@ -32,6 +43,43 @@
   }
 }
 
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes matrix {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(30px); }
+}
+
+@keyframes gridRotate {
+  0% { transform: rotateX(0deg) rotateY(0deg); }
+  100% { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+@keyframes dataStream {
+  0% { transform: translateY(-100%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+
+@keyframes hologram {
+  0%, 100% { 
+    transform: scale(1) rotate(0deg); 
+    opacity: 0.6;
+  }
+  50% { 
+    transform: scale(1.2) rotate(180deg); 
+    opacity: 1;
+  }
+}
+
+@keyframes orbit {
+  0% { transform: translate(-50%, -50%) rotate(0deg) translateY(-120px) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg) translateY(-120px) rotate(-360deg); }
+}
+
 .animate-fade-in {
   animation: fade-in 1s ease-out;
 }
@@ -44,20 +92,36 @@
   animation: glow 2s ease-in-out infinite;
 }
 
-/* Custom scrollbar */
+.animate-shimmer {
+  animation: shimmer 2s linear infinite;
+}
+
+.animate-dataStream {
+  animation: dataStream 3s linear infinite;
+}
+
+.animate-hologram {
+  animation: hologram 4s ease-in-out infinite;
+}
+
+.animate-orbit {
+  animation: orbit 8s linear infinite;
+}
+
+/* Custom scrollbar for matte theme */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(15, 23, 42, 0.5);
+  background: #374151;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #3b82f6, #06b6d4);
+  background: linear-gradient(to bottom, #6b7280, #4b5563);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #2563eb, #0891b2);
+  background: linear-gradient(to bottom, #9ca3af, #6b7280);
 }
