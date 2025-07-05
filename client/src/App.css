@@ -104,3 +104,53 @@ form button {
 form button:hover {
   background: #2b6cb0;
 }
+
+/* Add floating animation for geometric shapes */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Add falling animation for matrix-style numbers */
+@keyframes fall {
+  0% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+.animate-fall {
+  animation: fall linear infinite;
+}
+
+/* Add orbit animation for orbiting elements */
+@keyframes orbit {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) translateX(250px) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg) translateX(250px) rotate(-360deg);
+  }
+}
+
+.animate-orbit {
+  animation: orbit linear infinite;
+}
